@@ -2,3 +2,4 @@ Django
 psycopg2
 uwsgi
 django-bootstrap4
+stripe

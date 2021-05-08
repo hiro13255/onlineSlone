@@ -3,4 +3,5 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    return render(request, 'top/index.html')
+    context = {"stripe_key": "xxxxx"}
+    return render(request, 'top/index.html', context)

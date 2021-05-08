@@ -19,5 +19,6 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('^blog/', include('blog.urls')),
+    url('^checkout/', include('checkout.urls')),
     url('^', include('top.urls')),
 ]

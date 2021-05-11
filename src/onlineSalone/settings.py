@@ -11,16 +11,24 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import environ
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# Todo: envから設定を読み込む処理
+
+env = environ.Env()
+env.read_env('.env')
+
+PUBLIC_KEY = env('PUBLIC_KEY')
+
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fok3)9qa45l!v7+s+ocwwi-+a#@nynp7@-!cwgxwhhlwfm93^$'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,6 +49,7 @@ INSTALLED_APPS = [
     'stripe',
     'top',
     'blog',
+    'checkout',
     'bootstrap4',
 ]
 
@@ -133,3 +142,16 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+#コンソール上に内容を表示
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+#実際にメールを送信する。
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+# メールサーバーへの接続設定
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = True

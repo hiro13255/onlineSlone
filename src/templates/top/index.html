@@ -6,52 +6,55 @@
     <div class="container">
     {# １つ目のセクション（エンジニア集会所とは？） #}
         <div class="first-section">
-            <h2 class="title">プログラミング学習で悩んでいませんか？</h2>
+            <h2 class="title fadein-center">プログラミング学習で悩んでいませんか？</h2>
             <div class="list-item">
                 <ul>
-                    <div class="list-item-content">
+                    <div class="list-item-content fadein-right">
                         <li>身近にプログラミング仲間が欲しい！</li>
                         <img class="first-section-img" src="{% static "img/top/undraw_add_friends.png" %}">
                     </div>
-                    <div class="list-item-content">
+                    <div class="list-item-content fadein-center">
                         <li>規模が大きいアプリを作ってみたい！</li>
                         <img class="first-section-img" src="{% static "img/top/undraw_developer_activity.png" %}">
                     </div>
-                    <div class="list-item-content">
+                    <div class="list-item-content fadein-left">
                         <li>エンジニアから色々な話を聞きたい！</li>
                         <img class="first-section-img" src="{% static "img/top/undraw_conversation.png" %}">
                     </div>
                 </ul>
             </div>
 
-            <div class="sub-title">
+            <div class="sub-title fadein-center">
                 <h3>〜これらの問題が解決できる場所〜</h3>
                 <h3>「エンジニア集会場」</h3>
             </div>
 
 
-            <div class="text-contents">
+            <div class="text-contents fadein-center">
                 <p>現役エンジニアの方や駆け出しエンジニアの方が約３０名ほど参加されています。</p>
                 <p>またHTML、CSSを始めPython,Ruby,C,C++,Flutter(Dart)など<br>幅広く色々な言語を扱えるエンジニアが揃っております。<br>
-                    ※このオンラインサロンは参加するとフリーランスになることでき<br>稼ぐことが可能になる場所ではございません。<br>予めご了承ください。
                 </p>
+                <p>※このオンラインサロンは参加するとフリーランスになり稼ぐことが可能になる場所ではございません。<br>予めご了承ください。</p>
             </div>
         </div>
 
         {# ２つ目のセクション（参加することでできること） #}
         <div class="second-section">
-            <h2>参加することでできることは？</h2>
-            <div class="card-deck">
+            <h2 class="title fadein">参加することでできることは？</h2>
+            <div class="card-deck fadein">
+
+
+
                 <div class="card app-dev">
-                    <img class="card-img-top" style="height: 250px;" src="{% static "img/top/undraw_Development.png" %}">
-                    <h3>多人数でのアプリ開発</h3>
+                    <img class="card-img-top" src="{% static "img/top/undraw_Development.png" %}">
+                    <h3 class="can-title">多人数でのアプリ開発</h3>
                     <p class="second-section-card-contents">
                         アイディアはあるけど<br>どう開発するかわからない、<br>何人かで開発してみたい！<br>という方はいませんか？<br>
                         自らプロジェクトを立ち上げ<br>メンバー募集をかけることができます。</p>
                 </div>
                 <div class="card friends">
                     <img class="card-img-top" src="{% static "img/top/undraw_having_fun.png" %}">
-                    <h3>身近な場所に仲間を作れる</h3>
+                    <h3 class="can-title">身近な場所に仲間を作れる</h3>
                     <p class="second-section-card-contents">
                         コミュニティなのでTwitterなどの<br>
                         オープンなSNSに比べると<br>より距離が近い形で仲間を<br>作ることが出来ます。<br>
@@ -60,7 +63,7 @@
                 </div>
                 <div class="card question">
                     <img class="card-img-top" src="{% static "img/top/undraw_Questions.png" %}">
-                    <h3>質問できる環境</h3>
+                    <h3 class="can-title">質問できる環境</h3>
                     <p class="second-section-card-contents">
                         現役エンジニアの方がいるので<br>
                         お願いすればコードレビューを<br>してくださる場合もあります。<br>
@@ -70,45 +73,46 @@
         </div>
         {# 3つ目のセクション（） #}
         <div class="third-section">
-            <h2 class="title">開催した事があるイベント</h2>
-            <h3>〜もくもく会〜</h3>
-            <img class="card-img-top" src="{% static "img/top/undraw_programming.png" %}">
-            <p class="third-section-mokumoku-text">
+            <h2 class="title fadein">開催した事があるイベント</h2>
+            <h3 class="fadein">〜もくもく会〜</h3>
+            <img class="event-img fadein img-fluid" src="{% static "img/top/undraw_programming.png" %}">
+            <p class="third-section-mokumoku-text fadein">
                 定期的にオンラインでもくもく会というイベントを開催しています。<br>
                 DiscordやZoomなどを利用して実施しています。<br>
-                各自その時間に作業する内容を共有し、終了時にどこまで進んだか共有しています。<br>
-                エンジニア集会場ではポモドーロ・テクニックというものを使ってもくもく会の作業時間を区切っています。<br>
-                メンバーに見られている環境で作業することと、報告の際にどこまで進んだか言わなければ行けないので<br>
+                各自その時間に作業する内容を共有し、<br>終了時にどこまで進んだか共有しています。<br>
+                エンジニア集会場ではポモドーロ・テクニックというものを使って<br>もくもく会の作業時間を区切っています。<br>
+                メンバーに見られている環境で作業することと、<br>報告の際にどこまで進んだか言わなければ行けないので<br>
                 勉強や作業のモチベーションの維持に繋げることができています。
             </p>
 
-            <h3>〜ハッカソン〜</h3>
-            <img class="card-img-top" src="{% static "img/top/undraw_hacker_mind.png" %}">
-            <p class="third-section-hack-text">
-                プログラミング技術を活用してテーマに合ったものを制作していただきます。<br>
+            <h3 class="fadein">〜ハッカソン〜</h3>
+            <img class="event-img fadein img-fluid" src="{% static "img/top/undraw_hacker_mind.png" %}">
+            <p class="third-section-hack-text fadein">
+                プログラミング技術を活用して<br>テーマに合ったものを制作していただきます。<br>
                 プログラミング言語を限定してやる場合もありますが、<br>
-                基本的には各自得意言語でWebアプリ、Webサイトを作成していただきます。<br>
-                ハッカソンに参加することによって、調べながら作成することになるので<br>
+                基本的には各自得意言語でWebアプリ、<br>Webサイトを作成していただきます。<br>
+                ハッカソンに参加することによって、<br>調べながら作成することになるので<br>
                 より効率的に各々がスキルアップすることができます。<br>
                 作成して終わりではなく、たくさんの方に評価していただき、<br>
-                優秀な作品を作成していただいた方にはAmazonギフト券等プレゼントさせていただきます。<br>
-                今までで１度しか実施できていませんが（このときはAmazonギフト券1万円分プレゼントしました。）<br>
+                優秀な作品を作成していただいた方には<br>Amazonギフト券等プレゼントさせていただきます。<br>
+                今までで１度しか実施できていませんが<br>（このときはAmazonギフト券1万円分プレゼントしました。）<br>
                 これからも実施する予定です。
             </p>
-            <h2 class="title">今後予定しているイベント</h2>
-            <h3>〜オフ会〜</h3>
-            <p>
-                このサロンは2021年5月現在２人で運営しており、東京と大阪に在住しております。<br>そのため、東京と大阪の２箇所での開催を予定しております。<br>
+            <h2 class="title fadein">今後予定しているイベント</h2>
+            <h3 class="fadein">〜オフ会〜</h3>
+            <p class="fadein">
+                このサロンは2021年5月現在２人で運営しており、<br>東京と大阪に在住しております。<br>そのため、東京と大阪の２箇所での開催を予定しております。<br>
                 その他の場所につきましては希望があれば開催いたします。<br>
-                ※現在の状況が落ち着いてから開催を考えております。当面の間は実施しません。
+                ※現在の状況が落ち着いてから開催を考えております。<br>当面の間は実施しません。
             </p>
 
         </div>
         {# 4つ目のセクション（料金） #}
-        <div class="fourth-section">
+        <div class="fourth-section fadein">
             <h2 class="title">料金について</h2>
-            <h3 class="money"><strong>月額980円(税込)</strong></h3>
-            <p>Slackを使用して交流をしています。<br>１ヶ月980円で現役エンジニアと話す機会や色々な人のアウトプットを自分のものにできます！</p>
+
+            <h3 class="money"><strong>無料</strong></h3>
+            <p>Slackを使用して交流をしています。<br>現役エンジニアと話す機会や色々な人のアウトプットを自分のものにできます！</p>
             <p>その他にAmazonギフト券がもらえるハッカソンに参加出来たり<br>メンバーと技術情報のやり取り等、密に行うことが可能です。<br>
             アプリ開発に協力してくれるメンバー集めもこの場所ではできるのでお得です！
             </p>
@@ -117,24 +121,16 @@
         </div>
 
         {# 申し込みフォーム #}
-        {# Todo:Stripe埋め込み #}
-        <div class="stripe-form">
-            <form action="/checkout/" method="POST">
-                {% csrf_token %}
-                <script
-                        src="https://checkout.stripe.com/checkout.js"
-                        class="stripe-button"
-                        data-key={{stripe_key}}
-                                data-amount="980"
-                        data-name="お支払い"
-                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                        data-locale="auto"
-                        data-currency="JPY"
-                        data-zip-code="false">
-                </script>
-            </form>
-        </div>
-
+        <form action="join/" method="post">
+            {% csrf_token %}
+            <div class="form-group fadein">
+                <label for="exampleInputEmail1">メールアドレス</label>
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            </div>
+            <div class="join-btn fadein">
+                <button type="submit" class="btn btn-primary">【エンジニア集会場】に参加する</button>
+            </div>
+        </form>
     </div>
 
 {% endblock %}

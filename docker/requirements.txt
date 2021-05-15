@@ -4,3 +4,4 @@ uwsgi
 django-bootstrap4
 stripe
 django-environ
+gunicorn

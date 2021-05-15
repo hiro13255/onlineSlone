@@ -1,6 +1,17 @@
 version: '3'
 
 services:
+  nginx:
+    image: nginx
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./nginx/uwsgi_params:/etc/nginx/uwsgi_params
+      - ./src/static:/static
+    depends_on:
+      - app
+
   db:
     image: postgres
     ports:
@@ -14,11 +25,12 @@ services:
 
   app:
     build: ./docker
-    command: python3 manage.py runserver 0.0.0.0:8000
+    #command: python3 manage.py runserver 0.0.0.0:8000
+    command: uwsgi --socket :8001 --module onlineSalon.wsgi
     volumes:
     - ./src:/code
-    ports:
-    - "8000:8000"
+    expose:
+      - 8001
     depends_on:
       - db
 

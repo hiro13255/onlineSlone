@@ -16,9 +16,15 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from django.conf.urls import url, static
+from onlineSalone import settings
+from .settings import base
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url('^blog/', include('blog.urls')),
     url('^checkout/', include('checkout.urls')),
     url('^', include('top.urls')),
 ]
+
+#urlpatterns += static(settings.base.STATIC_URL, document_root=settings.base.STATIC_ROOT)

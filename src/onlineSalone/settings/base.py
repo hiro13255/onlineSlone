@@ -28,9 +28,9 @@ env.read_env('.env')
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False   # 外部から見られないようセキュリティ対策(False)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*']   # ドメイン名を格納
 
 
 # Application definition
@@ -134,10 +134,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+# ”static”と”media”の設定 START
 STATIC_URL = '/static/'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = '/usr/share/nginx/html/static'
+# ”static”と”media”の設定 END
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "./static"),
+    os.path.join(BASE_DIR, "/code/./static"),
 ]
 
 #コンソール上に内容を表示

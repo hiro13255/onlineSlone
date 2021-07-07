@@ -4,11 +4,11 @@ services:
   nginx:
     image: nginx
     ports:
-      - "80:80"
+      - "8000:8000"
     volumes:
       - ./nginx/gunicorn.conf:/etc/nginx/conf.d/default.conf
-      - ./src/static:/static
-      - gunicorn:/var/run/gunicorn
+      - ./src/static:/static/static
+      - ./src/static:/usr/share/nginx/html/static
     depends_on:
       - app
 
@@ -26,17 +26,13 @@ services:
   app:
     build: ./docker
     #command: python3 manage.py runserver 0.0.0.0:8000
-    command: gunicorn onlineSalone.wsgi:application --bind=unix:/var/run/gunicorn/gunicorn.sock
+    command: uwsgi --socket :8001 --module onlineSalon.wsgi
     volumes:
     - ./src:/code
-    - gunicorn:/var/run/gunicorn
-    ports:
-    - "8000:8000"
+    expose:
+      - 8001
     depends_on:
       - db
 
 volumes:
   postgres_data:
-
-  gunicorn:
-    driver: local
